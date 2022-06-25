@@ -2,12 +2,13 @@ import React from "react";
 //import "../../App.css";
 //import "../home/home.css";
 import "./about.css";
+import aboutText from "../../services/aboutPageText";
 
-const About =()=> {
+const About = () => {
   return (
     <div className="pagesContainer about">
       <div className="homePageLeft aboutText">
-        <div className=" textBox aboutMe">
+        <div className="textBox">
           <h1>About me </h1>
 
           <h3> Who am? </h3>
@@ -20,7 +21,7 @@ const About =()=> {
             I was born and raised in Jerusalem and currently reside in Haifa.
           </p>
         </div>
-        <div className=" textBox aboutTheApp">
+        <div className=" textBox">
           <h1>About the App </h1>
 
           <h3> About the idea </h3>
@@ -35,7 +36,7 @@ const About =()=> {
           </p>
         </div>
 
-        <div className=" textBox nextLevel">
+        <div className=" textBox">
           <h1> Next level </h1>
           <h3> Short term targets? </h3>
           <p>
@@ -47,12 +48,12 @@ const About =()=> {
         </div>
       </div>
 
-      <div className="aboutRight"> 
-      <div className="imgBox box-1"></div>
-      <div className="imgBox box-2"></div>
-      <div className="imgBox box-3"></div>
+      <div className="aboutRight">
+        <div className="imgBox box-1"></div>
+        <div className="imgBox box-2"></div>
+        <div className="imgBox box-3"></div>
       </div>
     </div>
   );
-}
+};
 export default About;

@@ -1,6 +1,6 @@
 .about {
   display: flex;
-  box-sizing: ;
+  
   
 }
 .aboutText {
@@ -48,6 +48,8 @@
 }
 .textBox h1 {
   text-align: center;
+  font-size: 4vmin;
+  margin: 0.1em;
 }
 .textBox h3 {
   font-size: 3.5vmin;
