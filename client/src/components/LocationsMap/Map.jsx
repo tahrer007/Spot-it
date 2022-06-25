@@ -21,8 +21,7 @@ import {
 } from "@react-google-maps/api";
 import { formatRelative } from "date-fns";
 import { io } from "socket.io-client";
-//import socketIOClient from "socket.io-client";
-//const ENDPOINT = "http://127.0.0.1:5000/api/socket";
+
 
 export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
   const [markers, setMarkers] = useState([]);
@@ -48,8 +47,6 @@ export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
   useEffect(() => {
     const socket = io(`${myUrl}socket`);
     socket.on("newLocation", (newLocation) => {
-      console.log("ooooooooooooooooooooooooooooooooooooooooooooo")
-      console.log(newLocation);
       setMarkers((prevState) => [...prevState, newLocation]);
     });
   }, []);

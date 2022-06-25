@@ -1,7 +1,7 @@
 .about {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  box-sizing: ;
+  
 }
 .aboutText {
   box-sizing: border-box;
@@ -11,7 +11,7 @@
   background: url("../../assets/images/2.jpg") no-repeat center center/cover;
 }
 .aboutRight {
-  height: 100vmin;
+  
   width: 35%;
   /*background: rgba(75, 75, 75, 0.418);*/
   display: grid;
@@ -71,12 +71,17 @@
     center/cover;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .about {
     height: fit-content;
-
+    align-items: center;
+   justify-content: center;
     background: rgba(75, 75, 75, 0.418);
   }
+  .aboutRight{
+    height: 100vmin;
+  }
+
   .textBox h1 {
     margin: 0.1em;
   }
