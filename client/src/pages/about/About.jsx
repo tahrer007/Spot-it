@@ -1,11 +1,11 @@
 import React from "react";
-import "../../App.css";
-import "../home/home.css";
+//import "../../App.css";
+//import "../home/home.css";
 import "./about.css";
 
-function About() {
+const About =()=> {
   return (
-    <div className="pagesContainer home  ">
+    <div className="pagesContainer about">
       <div className="homePageLeft aboutText">
         <div className=" textBox aboutMe">
           <h1>About me </h1>
@@ -17,7 +17,7 @@ function About() {
           </p>
           <h3> Where I am From?</h3>
           <p>
-            I was born and raised in Jerusalem and currently reside in Haifa{" "}
+            I was born and raised in Jerusalem and currently reside in Haifa.
           </p>
         </div>
         <div className=" textBox aboutTheApp">
@@ -31,7 +31,7 @@ function About() {
           <h3> how it is work ? </h3>
           <p>
             the app shows all the locations of spotted boars in the last 48
-            hours. as well as the most affected neighborhoods.{" "}
+            hours. as well as the most affected neighborhoods.
           </p>
         </div>
 
