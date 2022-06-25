@@ -1,0 +1,44 @@
+.form{
+  line-height: 4vh;
+  font-size: 2.5vmin;
+}
+h5{
+  padding-top: 1em;
+  font-weight: normal;
+  
+}
+label{
+  font-size: 1em;
+  letter-spacing: normal;
+  padding-right: 1em;
+}
+
+.extraDetails{
+  width: 100%;
+  font-family: test1;
+ 
+}
+
+.buttonsBox{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+  height: max-content;
+  
+ 
+}
+.btn{
+  background: transparent;
+  color :antiquewhite ;
+  background: rgb(46, 46, 46 ,0.5);
+  cursor: pointer;
+  border: 1px  antiquewhite solid;
+  font-family: african;
+  font-size: 2vmin;
+  padding: 2vmin;
+}
+
+.btn:hover{
+  background: rgba(75, 75, 75, 0.8);
+}

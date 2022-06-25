@@ -1,0 +1,19 @@
+.locationsMap{
+    width: 100%;
+    height:100%;
+    box-sizing: border-box;
+    padding: 0.5vw;
+    display:flex ;
+    justify-content: center;
+    position: relative;
+}
+
+.infoWindow{
+    text-align: center;
+    
+   
+}
+h2,p{
+    color :#6d512c ; 
+    letter-spacing: normal;
+}

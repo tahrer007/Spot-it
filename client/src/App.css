@@ -1,0 +1,57 @@
+*{
+  margin: 0;
+  padding: 0;
+ 
+}
+@font-face {
+  font-family: African;
+  src: url(./assets/fonts/african/african.ttf);
+}
+@font-face {
+  font-family: lion_king;
+  src: url(./assets/fonts/lion_king/lion_king.ttf);
+}
+@font-face {
+  font-family: test1;
+  src: url(./assets/fonts/Akaya_Telivigala/AkayaTelivigala-Regular.ttf);
+}
+@font-face {
+  font-family: test2;
+  src: url(./assets/fonts/Shizuru/Shizuru-Regular.ttf);
+}
+.appContainer{
+  color: #faebd7;
+  height: 100%;
+  width:100%;
+  
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: test1;
+  /*font-family: african;*/
+  letter-spacing:0.3vw; 
+}
+.pagesContainer{
+  width: 100vw;
+  height:90vh;
+  margin: 0;
+  padding: 0;
+}
+
+/*to ask the user to use landscape*/
+#info {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("./assets/images/rotate.png") no-repeat center center/cover;
+}
+/* only when orientation is in portrait mode */
+@media  (orientation: portrait) {
+  #info {
+    display: block;
+    z-index: 1000;
+  }
+}
