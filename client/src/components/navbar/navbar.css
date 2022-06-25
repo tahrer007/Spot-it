@@ -66,6 +66,6 @@
 
 @media (max-width: 800px) {
   .navbarBtn {
-   
+    font-size: 1.6rem;
   }
 }
