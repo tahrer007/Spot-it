@@ -1,9 +1,9 @@
 import React, { useState, useCallback, useRef } from "react";
-import mapStyles from "./mapStyles";
 import "../../App.css";
 import "../../pages/home/home.css";
 import "./redMap.css";
-import redAreaArr from "./redArea";
+import redAreaArr from "../../services/data/redArea";
+import { myUrl } from "../../services/api";
 
 import {
   GoogleMap,
@@ -24,7 +24,7 @@ export default function Map() {
   const [selected, setSelected] = useState(null);
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyApfEJizBV1MmMpqHfTZiGKrQkvCF1UFAo",
+    googleMapsApiKey: myUrl,
     libraries,
   });
 

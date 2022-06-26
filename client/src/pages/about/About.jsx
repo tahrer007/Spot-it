@@ -2,7 +2,7 @@ import React from "react";
 //import "../../App.css";
 //import "../home/home.css";
 import "./about.css";
-import aboutText from "../../services/aboutPageText";
+import aboutText from "../../services/data/aboutPageText";
 
 const About = () => {
   return (
