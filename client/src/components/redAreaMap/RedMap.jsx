@@ -3,7 +3,6 @@ import "../../App.css";
 import "../../pages/home/home.css";
 import "./redMap.css";
 import redAreaArr from "../../services/data/redArea";
-import { myUrl } from "../../services/api";
 
 import {
   GoogleMap,
@@ -19,12 +18,12 @@ import {
   center,
 } from "../../services/mapsConfig/mapConfig";
 
-export default function Map() {
+export default function Map({ ApiKey }) {
   const [markers, setMarkers] = useState(redAreaArr);
   const [selected, setSelected] = useState(null);
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: myUrl,
+    googleMapsApiKey:ApiKey,
     libraries,
   });
 
