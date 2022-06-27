@@ -6,9 +6,9 @@ export default function HomeText() {
       <h3> How its work ? </h3>
       <div className="list">
         <ol>
-          <li>Click where to put the mark</li>
-          <li>Fill few details </li>
-          <li>Click submit </li>
+          <li>Click or search where to put the mark.</li>
+          <li>Add some details. </li>
+          <li>Submit. </li>
         </ol>
       </div>
 
