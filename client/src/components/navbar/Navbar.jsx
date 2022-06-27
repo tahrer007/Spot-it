@@ -23,7 +23,6 @@ export default function Navbar() {
           About
         </Link>
       </div>
-
       {/* <Link className="navbarLink navbarBtn" to="/help">
           Help
         </Link>
