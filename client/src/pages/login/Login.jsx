@@ -6,7 +6,7 @@ function login() {
   return (
     <div className='pagesContainer'>
         <div className='loginBox'>
-            <button> </button>
+            
         </div>
 
 
