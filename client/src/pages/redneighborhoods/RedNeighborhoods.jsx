@@ -26,14 +26,14 @@ import { getGoogleApiKey } from "../../services/locations";
       <div className="homePageRight">
         <div className="homeText">
           <h3>
-            these neighborhoods are the most affected by boars according to
-            municipality of Haifa{" "}
+            These neighborhoods are the most affected by boars according to
+            municipality of Haifa.
           </h3>
           <div className="extrainfo">
-            if you have more questions about the boars or about the services
+            If you have more questions about the boars or about the services
             that you can receive from the municipality of haifa you can visit
-            their{" "}
-            <a href="https://www.haifa.muni.il/operation/boars/"> website </a>
+            their.
+            <a href="https://www.haifa.muni.il/operation/boars/"> Website </a>
           </div>
         </div>
       </div>
