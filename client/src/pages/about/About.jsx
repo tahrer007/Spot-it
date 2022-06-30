@@ -8,8 +8,8 @@ const About = () => {
   return (
     <div className="pagesContainer about">
       <div className="homePageLeft aboutText">
-        {aboutText.map((x) => (
-          <div className="textBox">
+        {aboutText.map((x,i) => (
+          <div className="textBox" key={i}>
             <h1>{x.boxTitle} </h1>
             {x.questions.map((y) => (
               <>
