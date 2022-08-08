@@ -7,7 +7,13 @@ import { getGoogleApiKey, postLocation } from "../../services/locations";
 function Home() {
   const [addingLocation, setAddingLocation] = useState(false);
   const [removeLocaLMark, setRemoveLocalMark] = useState(false);
-  const [ApiKey, setApiKey] = useState("");
+  const [ApiKey, setApiKey] = useState({
+    loading: true,
+    ApiKey: null,
+    error: null
+    }); 
+
+  //const [ApiKey, setApiKey] = useState("");
   const [newMark, setNewMark] = useState({
     lat: 0,
     lng: 0,
@@ -17,6 +23,10 @@ function Home() {
   });
 
   useEffect(() => {
+
+    try {}catch {
+      
+    }
     async function getApiKey() {
       const key =await getGoogleApiKey();
       setApiKey(key);
