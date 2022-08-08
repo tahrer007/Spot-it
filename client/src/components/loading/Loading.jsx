@@ -1,11 +1,9 @@
 import React from "react";
-import "./spinner.css" ; 
-
-
-
+import "./loading.css" ;
 
 const Loading =()=>{
-return (<div>Loading </div>)
+
+    return <div className="">Loading</div>
 }
 
-export default Loading ; 
+export default Loading
