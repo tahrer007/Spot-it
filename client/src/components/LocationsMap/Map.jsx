@@ -92,7 +92,7 @@ export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
   }
 
   return (
-    <div className="locationsMap">
+    <div className="leftSideInnerBox">
       <Locate panTo={panTo} />
 
       <Search panTo={panTo} />
