@@ -42,7 +42,6 @@ function Home() {
             ApiKey: false,
             error: true,
           });
-      console.log(key);
     };
 // set time out temprorey for devlopment 
     setTimeout(() => {
@@ -90,8 +89,8 @@ function Home() {
   return (
     <div className="pagesContainer home BackGround ">
       <div className="homePageLeft">
-        {loadingMap.loading && <Loading />}
-        {loadingMap.error && <Error />}
+      {/*{loadingMap.loading && <Loading />}
+        {loadingMap.error && <Error />*/}
 
         {loadingMap.ApiKey && (
           <Map
