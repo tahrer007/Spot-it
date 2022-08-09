@@ -3,7 +3,9 @@ import "./error.css" ;
 
 const Error =()=>{
 
-    return <div className="">Error</div>
+    console.log("test!!!!!")
+
+    return <div className="error">Error</div>
 }
 
 export default Error

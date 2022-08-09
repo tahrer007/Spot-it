@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Map from "../../components/LocationsMap/Map";
+import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
 import NewLocationInput from "../../components/newLocationInput/NewLocationInput";
 import HomeText from "../../components/homeText/HomeText";
 import { getGoogleApiKey, postLocation } from "../../services/locations";
 
 function Home() {
-  const [addingLocation, setAddingLocation] = useState(false);
-  const [removeLocaLMark, setRemoveLocalMark] = useState(false);
-  const [ApiKey, setApiKey] = useState({
+  const [loadingMap, setLoadingMap] = useState({
     loading: true,
     ApiKey: null,
-    error: null
-    }); 
-
-  //const [ApiKey, setApiKey] = useState("");
+    error: null,
+  });
   const [newMark, setNewMark] = useState({
     lat: 0,
     lng: 0,
@@ -21,17 +19,35 @@ function Home() {
     comment: null,
     number: null,
   });
-
+  const [addingLocation, setAddingLocation] = useState(false);
+  const [removeLocaLMark, setRemoveLocalMark] = useState(false);
+  //get google api key and load the map
   useEffect(() => {
+    const getApiKey = async () => {
+      const key = await getGoogleApiKey();
+      setLoadingMap({
+        loading: false,
+        ApiKey: key,
+        error: null,
+      });
 
-    try {}catch {
-      
-    }
-    async function getApiKey() {
-      const key =await getGoogleApiKey();
-      setApiKey(key);
-    }
-    getApiKey();
+      key
+        ? setLoadingMap({
+            loading: false,
+            ApiKey: key,
+            error: null,
+          })
+        : setLoadingMap({
+            loading: false,
+            ApiKey: false,
+            error: true,
+          });
+      console.log(key);
+    };
+// set time out temprorey for devlopment 
+    setTimeout(() => {
+      getApiKey();
+    }, 3000);
   }, []);
 
   useEffect(() => {
@@ -74,11 +90,14 @@ function Home() {
   return (
     <div className="pagesContainer home BackGround ">
       <div className="homePageLeft">
-        {ApiKey && (
+        {loadingMap.loading && <Loading />}
+        {loadingMap.error && <Error />}
+
+        {loadingMap.ApiKey && (
           <Map
             handelMapClick={handelMapClick}
             removeLocaLMark={removeLocaLMark}
-            ApiKey={ApiKey}
+            ApiKey={loadingMap.ApiKey}
           />
         )}
       </div>
