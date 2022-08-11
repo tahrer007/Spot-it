@@ -3,7 +3,7 @@ import "./loading.css" ;
 
 const Loading =()=>{
 
-    return <div className="">Loading</div>
+    return <div className="leftSideInnerBox loading">Loading</div>
 }
 
 export default Loading
