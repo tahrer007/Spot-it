@@ -1,9 +1,6 @@
 import React, { useState, useCallback, useRef } from "react";
-import "../../App.css";
-import "../../pages/home/home.css";
-import "./redMap.css";
-import redAreaArr from "../../services/data/redArea";
 
+import redAreaArr from "../../services/data/redArea";
 import {
   GoogleMap,
   useLoadScript,
@@ -18,12 +15,15 @@ import {
   center,
 } from "../../services/mapsConfig/mapConfig";
 
+import "../../pages/home/home.css";
+import "./redMap.css";
+
 export default function Map({ ApiKey }) {
   const [markers, setMarkers] = useState(redAreaArr);
   const [selected, setSelected] = useState(null);
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey:ApiKey,
+    googleMapsApiKey: ApiKey,
     libraries,
   });
 
@@ -79,7 +79,7 @@ export default function Map({ ApiKey }) {
               <h2>
                 <span role="img" aria-label="wild pig">
                   🏘️
-                </span>{" "}
+                </span>
                 {selected.name}
               </h2>
             </div>

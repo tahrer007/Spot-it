@@ -1,33 +1,24 @@
 import React, { useEffect, useState } from "react";
-import "../../App.css";
-import "./redNeighborhoods.css";
-import "../home/home.css";
+
 import Map from "../../components/redAreaMap/RedMap";
-import { getGoogleApiKey } from "../../services/locations";
-
- const  RedNeighborhoods= () =>{
-
-  const [ApiKey, setApiKey] = useState("");
-
-  useEffect(() => {
-    async function getApiKey() {
-      const key = await getGoogleApiKey();
-      setApiKey(key);
-    }
-    getApiKey();
-  }, []);
-
+import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
+import useApiKey from "../../hooks/useApiKey";
+import "./redNeighborhoods.css";
+const RedNeighborhoods = () => {
+  const [loadingMap] = useApiKey();
   return (
     <div className="pagesContainer home BackGround">
       <div className="homePageLeft">
-       { ApiKey && <Map ApiKey={ApiKey}/>}
-      </div>
+        {loadingMap.ApiKey && <Map ApiKey={loadingMap.ApiKey} />}
+        {loadingMap.loading && <Loading />}
+        {loadingMap.error && <Error />}
+        </div>
 
       <div className="homePageRight">
         <div className="homeText">
           <h3>
-            These neighborhoods are the most affected by boars according to
-            municipality of Haifa.
+           
           </h3>
           <div className="extrainfo">
             If you have more questions about the boars or about the services
@@ -39,5 +30,5 @@ import { getGoogleApiKey } from "../../services/locations";
       </div>
     </div>
   );
-}
-export default  RedNeighborhoods ;
+};
+export default RedNeighborhoods;
