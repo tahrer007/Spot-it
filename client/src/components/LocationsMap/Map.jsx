@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import Search from "./search/Search";
 import Locate from "./currentLocation/CurrentLocation";
-import isInsideHaifa from "../../scripts/insideHaifa";
-import HaifaCoords from "../../scripts/haifaCoords";
+import isInsideHaifa from "../../services/validateLocation/insideHaifa";
+import HaifaCoords from "../../services/validateLocation/haifaCoords";
 import { getAllLocations } from "../../services/locations";
 import { myUrl } from "../../services/api";
 import {
