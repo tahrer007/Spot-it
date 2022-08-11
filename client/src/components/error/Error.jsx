@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import { init } from "ityped";
-import "./loading.css" ;
 
-const Loading =()=>{
+import "./error.css" ;
 
+const Error =()=>{
     const textRef = useRef();
     useEffect(() => {
         init(textRef.current, {
@@ -12,15 +12,13 @@ const Loading =()=>{
           typeSpeed: 100,
           disableBackTyping: false,
     
-          strings: [" Loading ......."],
-        }); 
+          strings: ["Something Wrong. Please try again later.🥲"],
+        });
     },[]);
 
     return <div className="leftSideInnerBox error"><p className="p1">
     <span ref={textRef}></span>
-  </p> </div>}
+  </p> </div>
+}
 
-
-
-
-export default Loading
+export default Error

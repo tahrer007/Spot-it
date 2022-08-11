@@ -175,7 +175,7 @@ export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
           </InfoWindow>
         )}
       </GoogleMap>
-      <div className="errorMessage"></div>
+    { /* <div className="errorMessage"></div>*/}
     </div>
   );
 }

@@ -27,7 +27,7 @@ const getGoogleApiKey = async () => {
     const key = await myApi.get("keys/googleApiKey");
     return key.data;
   } catch (error) {
-    console.log(error);
+   
   }
 };
 
