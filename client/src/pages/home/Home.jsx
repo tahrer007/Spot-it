@@ -43,10 +43,8 @@ function Home() {
             error: true,
           });
     };
-// set time out temprorey for devlopment 
-    setTimeout(() => {
-      getApiKey();
-    }, 50000000);
+    
+    getApiKey();
   }, []);
 
   useEffect(() => {
@@ -89,7 +87,7 @@ function Home() {
   return (
     <div className="pagesContainer home BackGround ">
       <div className="homePageLeft">
-    {loadingMap.loading && <Loading />}
+        {loadingMap.loading && <Loading />}
         {loadingMap.error && <Error />}
 
         {loadingMap.ApiKey && (
