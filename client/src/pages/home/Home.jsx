@@ -46,7 +46,7 @@ function Home() {
 // set time out temprorey for devlopment 
     setTimeout(() => {
       getApiKey();
-    }, 3000);
+    }, 50000000);
   }, []);
 
   useEffect(() => {
