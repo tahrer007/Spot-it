@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Map from "../../components/redAreaMap/RedMap";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 import useApiKey from "../../hooks/useApiKey";
-import redAreaText from "../../services/data/redAreaText"
+import redAreaText from "../../services/data/redAreaText";
 import "./redNeighborhoods.css";
 const RedNeighborhoods = () => {
   const [loadingMap] = useApiKey();
@@ -14,15 +14,13 @@ const RedNeighborhoods = () => {
         {loadingMap.ApiKey && <Map ApiKey={loadingMap.ApiKey} />}
         {loadingMap.loading && <Loading />}
         {loadingMap.error && <Error />}
-        </div>
+      </div>
 
       <div className="homePageRight">
         <div className="homeText">
-          <h3>
-          {redAreaText.p1}
-          </h3>
+          <h3>{redAreaText.p1}</h3>
           <div className="extrainfo">
-          {redAreaText.p2}
+            {redAreaText.p2}
             <a href="https://www.haifa.muni.il/operation/boars/"> Website </a>
           </div>
         </div>
