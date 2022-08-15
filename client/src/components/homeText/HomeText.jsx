@@ -7,8 +7,8 @@ export default function HomeText() {
       <h3> How its work ? </h3>
       <div className="list">
         <ol>
-          {steps.map((y) => (
-            <li>{y}</li>
+          {steps.map((y,i) => (
+            <li key={i}>{y}</li>
           ))}
         </ol>
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import Map from "../../components/redAreaMap/RedMap";
+import Map from "../../components/redAreasMap/RedMap";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 import useApiKey from "../../hooks/useApiKey";

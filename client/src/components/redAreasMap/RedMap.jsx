@@ -14,8 +14,7 @@ import {
   options,
   center,
 } from "../../services/mapsConfig/mapConfig";
-
-import "../../pages/home/home.css";
+import InfoWindowDetails from "../InfoWindowDetails/InfoWindowDetails";
 import "./redMap.css";
 
 export default function Map({ ApiKey }) {
@@ -37,6 +36,8 @@ export default function Map({ ApiKey }) {
   const onMapLoad = useCallback((map) => {
     mapRef.current = map;
   }, []);
+
+  const unSelect = () => setSelected(false);
 
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";
@@ -69,21 +70,7 @@ export default function Map({ ApiKey }) {
         ))}
 
         {selected ? (
-          <InfoWindow
-            position={{ lat: selected.lat, lng: selected.lng }}
-            onCloseClick={() => {
-              setSelected(null);
-            }}
-          >
-            <div className="InfoWindow">
-              <h2>
-                <span role="img" aria-label="wild pig">
-                  🏘️
-                </span>
-                {selected.name}
-              </h2>
-            </div>
-          </InfoWindow>
+          <InfoWindowDetails selected={selected} unSelect={unSelect} />
         ) : null}
       </GoogleMap>
     </div>

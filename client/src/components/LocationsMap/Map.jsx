@@ -3,6 +3,7 @@ import Search from "./search/Search";
 import Locate from "./currentLocation/CurrentLocation";
 import isInsideHaifa from "../../services/validateLocation/insideHaifa";
 import HaifaCoords from "../../services/validateLocation/haifaCoords";
+import InfoWindowDetails from "../InfoWindowDetails/InfoWindowDetails";
 import { getAllLocations } from "../../services/locations";
 import { myUrl } from "../../services/api";
 import {
@@ -19,7 +20,6 @@ import {
   InfoWindow,
   Polygon,
 } from "@react-google-maps/api";
-import { formatRelative } from "date-fns";
 import { io } from "socket.io-client";
 
 export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
@@ -144,32 +144,8 @@ export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
             />
           ))}
 
-        {selected && (
-          <InfoWindow
-            className="InfoWindow"
-            position={{ lat: selected.lat, lng: selected.lng }}
-            onCloseClick={() => {
-              setSelected(null);
-            }}
-          >
-            <div className="InfoWindow">
-              <h2>
-                <span role="img" aria-label="wild pig">
-                  🐗
-                </span>
-                Alert
-              </h2>
-              <p>
-                Spotted {formatRelative(Date.parse(selected.time), new Date())}
-                <br />
-                number : {selected.number} <br />
-                {selected.comment ? "comment : " + selected.comment : null}
-              </p>
-            </div>
-          </InfoWindow>
-        )}
+        {selected && <InfoWindowDetails selected={selected} />}
       </GoogleMap>
-      {/* <div className="errorMessage"></div>*/}
     </div>
   );
 }
