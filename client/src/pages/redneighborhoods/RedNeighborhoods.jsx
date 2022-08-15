@@ -1,43 +1,31 @@
-import React, { useEffect, useState } from "react";
-import "../../App.css";
-import "./redNeighborhoods.css";
-import "../home/home.css";
+import React from "react";
+
 import Map from "../../components/redAreaMap/RedMap";
-import { getGoogleApiKey } from "../../services/locations";
-
- const  RedNeighborhoods= () =>{
-
-  const [ApiKey, setApiKey] = useState("");
-
-  useEffect(() => {
-    async function getApiKey() {
-      const key = await getGoogleApiKey();
-      setApiKey(key);
-    }
-    getApiKey();
-  }, []);
-
+import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
+import useApiKey from "../../hooks/useApiKey";
+import redAreaText from "../../services/data/redAreaText";
+import "./redNeighborhoods.css";
+const RedNeighborhoods = () => {
+  const [loadingMap] = useApiKey();
   return (
     <div className="pagesContainer home BackGround">
       <div className="homePageLeft">
-       { ApiKey && <Map ApiKey={ApiKey}/>}
+        {loadingMap.ApiKey && <Map ApiKey={loadingMap.ApiKey} />}
+        {loadingMap.loading && <Loading />}
+        {loadingMap.error && <Error />}
       </div>
 
       <div className="homePageRight">
         <div className="homeText">
-          <h3>
-            These neighborhoods are the most affected by boars according to
-            municipality of Haifa.
-          </h3>
+          <h3>{redAreaText.p1}</h3>
           <div className="extrainfo">
-            If you have more questions about the boars or about the services
-            that you can receive from the municipality of haifa you can visit
-            their.
+            {redAreaText.p2}
             <a href="https://www.haifa.muni.il/operation/boars/"> Website </a>
           </div>
         </div>
       </div>
     </div>
   );
-}
-export default  RedNeighborhoods ;
+};
+export default RedNeighborhoods;

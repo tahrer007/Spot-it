@@ -16,7 +16,7 @@ const Error =()=>{
         });
     },[]);
 
-    return <div className="leftSideInnerBox error"><p className="p1">
+    return <div className="leftSideInnerBox error"><p>
     <span ref={textRef}></span>
   </p> </div>
 }

@@ -16,7 +16,7 @@ const Loading =()=>{
         }); 
     },[]);
 
-    return <div className="leftSideInnerBox error"><p className="p1">
+    return <div className="leftSideInnerBox"><p>
     <span ref={textRef}></span>
   </p> </div>}
 

@@ -4,14 +4,10 @@ import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 import NewLocationInput from "../../components/newLocationInput/NewLocationInput";
 import HomeText from "../../components/homeText/HomeText";
-import { getGoogleApiKey, postLocation } from "../../services/locations";
-
+import { postLocation } from "../../services/locations";
+import useApiKey from "../../hooks/useApiKey";
 function Home() {
-  const [loadingMap, setLoadingMap] = useState({
-    loading: true,
-    ApiKey: null,
-    error: null,
-  });
+  const [loadingMap] = useApiKey();
   const [newMark, setNewMark] = useState({
     lat: 0,
     lng: 0,
@@ -21,32 +17,6 @@ function Home() {
   });
   const [addingLocation, setAddingLocation] = useState(false);
   const [removeLocaLMark, setRemoveLocalMark] = useState(false);
-  //get google api key and load the map
-  useEffect(() => {
-    const getApiKey = async () => {
-      const key = await getGoogleApiKey();
-      setLoadingMap({
-        loading: false,
-        ApiKey: key,
-        error: null,
-      });
-
-      key
-        ? setLoadingMap({
-            loading: false,
-            ApiKey: key,
-            error: null,
-          })
-        : setLoadingMap({
-            loading: false,
-            ApiKey: false,
-            error: true,
-          });
-    };
-    
-    getApiKey();
-  }, []);
-
   useEffect(() => {
     const updateDb = async () => {
       await postLocation(newMark);
@@ -58,8 +28,8 @@ function Home() {
   }, [newMark]);
 
   const handelForm = (howMany, details) => {
-    if (!howMany) {
-    } else {
+    //if user cancel ..howMany=0 ; 
+    if (howMany) {
       setNewMark((prevState) => ({
         ...prevState,
         number: howMany,
@@ -89,7 +59,6 @@ function Home() {
       <div className="homePageLeft">
         {loadingMap.loading && <Loading />}
         {loadingMap.error && <Error />}
-
         {loadingMap.ApiKey && (
           <Map
             handelMapClick={handelMapClick}
