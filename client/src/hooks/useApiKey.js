@@ -3,30 +3,28 @@ import { getGoogleApiKey } from "../services/locations";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
-  const [loadingMap, setLoadingMap] = useState({
+  const [connectionStatus, setConnectionStatus] = useState({
     loading: true,
     ApiKey: null,
     error: null,
   });
 
   useEffect(() => {
-
-    console.log("sfsdfasfhadskj asdfhjhwernj iosdf da")
     const getApiKey = async () => {
       const key = await getGoogleApiKey();
-      setLoadingMap({
+      setConnectionStatus({
         loading: false,
         ApiKey: key,
         error: null,
       });
 
       key
-        ? setLoadingMap({
+        ? setConnectionStatus({
             loading: false,
             ApiKey: key,
             error: null,
           })
-        : setLoadingMap({
+        : setConnectionStatus({
             loading: false,
             ApiKey: false,
             error: true,
@@ -36,5 +34,5 @@ export default () => {
     getApiKey();
   }, []);
 
-  return [loadingMap];
+  return [connectionStatus];
 };

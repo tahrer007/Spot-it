@@ -7,7 +7,7 @@ import HomeText from "../../components/homeText/HomeText";
 import { postLocation } from "../../services/locations";
 import useApiKey from "../../hooks/useApiKey";
 function Home() {
-  const [loadingMap] = useApiKey();
+  const [connectionStatus] = useApiKey();
   const [newMark, setNewMark] = useState({
     lat: 0,
     lng: 0,
@@ -57,13 +57,13 @@ function Home() {
   return (
     <div className="pagesContainer home BackGround ">
       <div className="homePageLeft">
-        {loadingMap.loading && <Loading />}
-        {loadingMap.error && <Error />}
-        {loadingMap.ApiKey && (
+        {connectionStatus.loading && <Loading />}
+        {connectionStatus.error && <Error />}
+        {connectionStatus.ApiKey && (
           <Map
             handelMapClick={handelMapClick}
             removeLocaLMark={removeLocaLMark}
-            ApiKey={loadingMap.ApiKey}
+            ApiKey={connectionStatus.ApiKey}
           />
         )}
       </div>
