@@ -9,11 +9,11 @@ const About = () => {
         {aboutText.map((x, i) => (
           <div className="textBox" key={i}>
             <h1>{x.boxTitle} </h1>
-            {x.questions.map((y) => (
-              <>
+            {x.questions.map((y,i) => (
+              <div key={i}>
                 <h3> {y.question} </h3>
                 <p>{y.answer}</p>
-              </>
+              </div>
             ))}
           </div>
         ))}
