@@ -17,7 +17,6 @@ import {
   GoogleMap,
   useLoadScript,
   Marker,
-  InfoWindow,
   Polygon,
 } from "@react-google-maps/api";
 import { io } from "socket.io-client";
