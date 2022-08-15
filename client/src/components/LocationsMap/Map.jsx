@@ -22,7 +22,6 @@ import {
 import { formatRelative } from "date-fns";
 import { io } from "socket.io-client";
 
-
 export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
   const [markers, setMarkers] = useState([]);
   const [selected, setSelected] = useState(null);
@@ -31,8 +30,6 @@ export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
     googleMapsApiKey: ApiKey,
     libraries,
   });
- 
-  
 
   useEffect(() => {
     async function getLocations() {
@@ -51,12 +48,9 @@ export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
     });
   }, []);
 
- 
-
-  useEffect(()=>{
-    if(removeLocaLMark) setLocalMark(null);
-  },[removeLocaLMark]);
-
+  useEffect(() => {
+    if (removeLocaLMark) setLocalMark(null);
+  }, [removeLocaLMark]);
 
   const onMapClick = (e) => {
     const lat = e.latLng.lat();
@@ -115,7 +109,7 @@ export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
           fillColor="#0000FF"
           fillOpacity={0.35}
         />
-        {(localMark && !removeLocaLMark) && (
+        {localMark && !removeLocaLMark && (
           <Marker
             position={{
               lat: localMark.lat,
@@ -175,7 +169,7 @@ export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
           </InfoWindow>
         )}
       </GoogleMap>
-    { /* <div className="errorMessage"></div>*/}
+      {/* <div className="errorMessage"></div>*/}
     </div>
   );
 }

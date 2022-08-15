@@ -18,8 +18,7 @@ export default function Locate({ panTo }) {
     };
 
     function error(err) {
-      //console.warn(`ERROR(${err.code}): ${err.message}`);
-      alert (`ERROR(${err.code}): ${err.message}`)
+      alert(`ERROR(${err.code}): ${err.message}`);
     }
 
     navigator.geolocation.getCurrentPosition(success, error, options);

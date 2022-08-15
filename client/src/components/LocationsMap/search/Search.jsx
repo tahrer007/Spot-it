@@ -14,19 +14,16 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
-//const options = { types: ["haifa"], componentRestrictions: { country: "il" } };
 
 export default function Search({ panTo }) {
-  const center = { lat: 32.794241949530296,
-    lng: 34.98972566204482, };
+  const center = { lat: 32.794241949530296, lng: 34.98972566204482 };
   // Create a bounding box with sides ~10km away from the center point
   const defaultBounds = {
     north: center.lat + 0.05,
-    south: center.lat -  0.05,
-    east: center.lng +  0.05,
-    west: center.lng -  0.05,
+    south: center.lat - 0.05,
+    east: center.lng + 0.05,
+    west: center.lng - 0.05,
   };
-
   const {
     ready,
     value,
@@ -36,10 +33,9 @@ export default function Search({ panTo }) {
   } = usePlacesAutocomplete({
     requestOptions: {
       bounds: defaultBounds,
-      componentRestrictions: {country: "il"},
+      componentRestrictions: { country: "il" },
       fields: ["address_components", "geometry", "icon", "name"],
       strictBounds: true,
-      //types: ["establishment"],
     },
   });
   const handleInput = (e) => {
