@@ -4,6 +4,7 @@ import Map from "../../components/redAreaMap/RedMap";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 import useApiKey from "../../hooks/useApiKey";
+import redAreaText from "../../services/data/redAreaText"
 import "./redNeighborhoods.css";
 const RedNeighborhoods = () => {
   const [loadingMap] = useApiKey();
@@ -18,12 +19,10 @@ const RedNeighborhoods = () => {
       <div className="homePageRight">
         <div className="homeText">
           <h3>
-           
+          {redAreaText.p1}
           </h3>
           <div className="extrainfo">
-            If you have more questions about the boars or about the services
-            that you can receive from the municipality of haifa you can visit
-            their.
+          {redAreaText.p2}
             <a href="https://www.haifa.muni.il/operation/boars/"> Website </a>
           </div>
         </div>
