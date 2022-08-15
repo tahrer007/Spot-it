@@ -144,19 +144,8 @@ export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
             />
           ))}
 
-        {selected && (
-          <InfoWindow
-            className="InfoWindow"
-            position={{ lat: selected.lat, lng: selected.lng }}
-            onCloseClick={() => {
-              setSelected(null);
-            }}
-          >
-            <InfoWindowDetails  selected= {selected}/>
-          </InfoWindow>
-        )}
+        {selected && <InfoWindowDetails selected={selected} />}
       </GoogleMap>
-      {/* <div className="errorMessage"></div>*/}
     </div>
   );
 }
