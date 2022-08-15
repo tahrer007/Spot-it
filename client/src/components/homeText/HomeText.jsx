@@ -1,4 +1,5 @@
 import React from "react";
+import { steps, lastSentance } from "../../services/data/homeText";
 
 export default function HomeText() {
   return (
@@ -6,13 +7,13 @@ export default function HomeText() {
       <h3> How its work ? </h3>
       <div className="list">
         <ol>
-          <li>Click or search where to put the mark.</li>
-          <li>Add some details. </li>
-          <li>Submit. </li>
+          {steps.map((y) => (
+            <li>{y}</li>
+          ))}
         </ol>
       </div>
 
-      <h3> Thats it. We are posted, thanks to you 😉 </h3>
+      <h3> {lastSentance} </h3>
     </div>
   );
 }
