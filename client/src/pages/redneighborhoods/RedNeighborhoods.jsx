@@ -1,5 +1,4 @@
 import React from "react";
-
 import Map from "../../components/redAreaMap/RedMap";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
@@ -21,7 +20,7 @@ const RedNeighborhoods = () => {
           <h3>{redAreaText.p1}</h3>
           <div className="extrainfo">
             {redAreaText.p2}
-            <a href="https://www.haifa.muni.il/operation/boars/"> Website </a>
+            <a href={redAreaText.link}> Website </a>
           </div>
         </div>
       </div>
