@@ -84,6 +84,8 @@ export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
     return "Loading...";
   }
 
+  const unSelect = ()=>setSelected(false);
+
   return (
     <div className="locationsMap">
       <Locate panTo={panTo} />
@@ -140,10 +142,11 @@ export default function Map({ handelMapClick, removeLocaLMark, ApiKey }) {
                 anchor: new window.google.maps.Point(15, 15),
                 scaledSize: new window.google.maps.Size(30, 30),
               }}
+              
             />
           ))}
 
-        {selected && <InfoWindowDetails selected={selected} />}
+        {selected && <InfoWindowDetails selected={selected} unSelect={unSelect}/>}
       </GoogleMap>
     </div>
   );

@@ -1,15 +1,16 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { formatRelative } from "date-fns";
 import { InfoWindow } from "@react-google-maps/api";
 
+
 const InfoWindowDetails = ({ selected, unSelect }) => {
+  const closeWindow = () => unSelect();
+
   return (
     <>
       <InfoWindow
         position={{ lat: selected.lat, lng: selected.lng }}
-        onCloseClick={() => {
-          unSelect();
-        }}
+        onCloseClick={() => closeWindow()}
       >
         {selected?.number ? (
           <div className="InfoWindow">

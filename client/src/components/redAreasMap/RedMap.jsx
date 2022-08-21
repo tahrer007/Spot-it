@@ -30,14 +30,14 @@ export default function Map({ ApiKey }) {
     const lat = e.latLng.lat();
     const lng = e.latLng.lng();
 
-    console.log(lat, lng);
+    //console.log(lat, lng);
   };
   const mapRef = useRef();
   const onMapLoad = useCallback((map) => {
     mapRef.current = map;
   }, []);
 
-  const unSelect = () => setSelected(false);
+  const unSelect = ()=>setSelected(false);
 
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";
